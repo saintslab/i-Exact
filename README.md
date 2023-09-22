@@ -1,4 +1,4 @@
-This is the official codes for [Activation Compression of Graph Neural Networks using Block-wise Quantization and Improved Variance Minimization]. Note that this repository is heavily inspired by the [EXACT repository](https://github.com/warai-0toko/Exact).
+This is the official codes for [Activation Compression of Graph Neural Networks using Block-wise Quantization and Improved Variance Minimization](https://arxiv.org/abs/2309.11856). Note that this repository is heavily inspired by the [EXACT repository](https://github.com/warai-0toko/Exact).
 
 ## Install
 This code is tested with Python 3.8 and CUDA 11.1. The environment for the code is the same as the one used in EXACT. In order to construct this environment, run the following commands:
@@ -24,7 +24,7 @@ pip install -v -e .
 cd mem_speed_bench
 python ./arxiv/train_full_batch.py --conf ./arxiv/conf/$MODEL.yaml --n_bits $BIT_WIDTH --kept_frac $FRAC --col_size $GROUP_SIZE --lo $ALPHA
 ```
-### important note
+### Important note
 Currently, only the sage model is tested for I-exact. Note also that non-uniform quantization (equivalent to ALPHA != 1.0) has only been tested with BIT_WIDTH == 2.
 
 MODEL must be chosen from {gcn, sage, gcn2, gat}, BIT_WIDTH must be chosen from {1,2,4,8}, FRAC is pretty flexible. it can be any float-point number <= 1.0. If FRAC == 1.0, then the random projection will not be applied. GROUP_SIZE can be any natural number, and is denoted by G/R in the paper. ALPHA denotes the width of the first quantization bin. Since the quantization bins are assumed to be symmetric around the middle of the support, this also defines the remaining two quantization bins. 
