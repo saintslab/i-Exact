@@ -29,7 +29,7 @@ Currently, only the SAGE model is tested for I-Exact. Note also that non-uniform
 
 MODEL must be chosen from {gcn, sage, gcn2, gat}, BIT_WIDTH must be chosen from {1,2,4,8}, FRAC is pretty flexible. it can be any float-point number <= 1.0. If FRAC == 1.0, then the random projection will not be applied. GROUP_SIZE can be any natural number, and is denoted by G/R in the paper. ALPHA denotes the width of the first quantization bin. Since the quantization bins are assumed to be symmetric around the middle of the support, this also defines the remaining two quantization bins. 
 
-If you do not want to apply any quantization, you can change the commend to 
+If you do not want to apply any quantization, you can change the command to 
 ```
 python ./arxiv/train_full_batch.py --conf ./arxiv/conf/$MODEL.yaml --act_fp --kept_frac $FRAC --col_size $GROUP_SIZE --lo $ALPHA
 ```
@@ -43,7 +43,7 @@ python ./non_ogbn_datasets/train_full_batch.py --conf ./non_ogbn_datasets/conf/$
 MODEL must be chosen from {gcn, sage, gcn2}. BIT_WIDTH must be chosen from {1,2,4,8}, FRAC can be any float-point number <= 1.0. 
 
 ### Get the occupied memory and training throughout.
-Add the flag **--debug_mem** and **--test_speed** to the above commends. For example,
+Add the flag **--debug_mem** and **--test_speed** to the above commands. For example,
 ```
 python ./arxiv/train_full_batch.py --conf ./arxiv/conf/$MODEL.yaml --n_bits $BIT_WIDTH --kept_frac $FRAC --debug_mem --test_speed
 ```
