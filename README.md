@@ -47,3 +47,9 @@ Add the flag **--debug_mem** and **--test_speed** to the above commends. For exa
 ```
 python ./arxiv/train_full_batch.py --conf ./arxiv/conf/$MODEL.yaml --n_bits $BIT_WIDTH --kept_frac $FRAC --debug_mem --test_speed
 ```
+
+### Variance Optimization
+Variance optimization is performed in the ```var_opt.ipynb``` file. This contains two flags, represented as booleans
+
+- ```clipped``` which controls whether or not variance optimization is performed in the clipped normal or just a regular normal distribution
+- ```use_d_key``` which controls whether or not to constrain the search space of scales to only the ones possible. Which are the scales occuring when d ∈ [4, 5,..., 2048] (saves time).
