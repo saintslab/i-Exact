@@ -1,4 +1,19 @@
+# [ICASSP 2024] Improved Activation Quantization
+
 This is the official source code for [Activation Compression of Graph Neural Networks using Block-wise Quantization and Improved Variance Minimization](https://arxiv.org/abs/2309.11856). Note that this repository is based on the [EXACT repository](https://github.com/warai-0toko/Exact).
+
+## Abstract
+Efficient training of large-scale graph neural networks (GNNs) has been studied with a specific focus on reducing their memory consumption. Work by Liu et al. (2022) proposed extreme activation compression (EXACT) which demonstrated drastic reduction in memory consumption by performing quantization of the intermediate activation maps down to using INT2 precision. They showed little to no reduction in performance while achieving large reductions in GPU memory consumption. In this work, we present an improvement to the EXACT strategy by using block-wise quantization of the intermediate activation maps. We experimentally analyze different block sizes and show further reduction in memory consumption (>15%), and runtime speedup per epoch (about 5%) even when performing extreme extents of quantization with similar performance trade-offs as with the original EXACT. Further, we present a correction to the assumptions on the distribution of intermediate activation maps in EXACT (assumed to be uniform) and show improved variance estimations of the quantization and dequantization steps. 
+
+## Citation
+Kindly use the following BibTeX entry if you use the code in your work.
+```
+@proceedings{bakhtiarifard2023ecnasbench,
+    title={Activation Compression of Graph Neural Networks using Block-wise Quantization with Improved Variance Minimization},
+    author={Sebastian Eliassen and Raghavendra Selvan},
+    booktitle={International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+    year={2024}}
+```
 
 ## Install
 This code is tested with Python 3.8 and CUDA 11.1. The environment for the code is the same as the one used in EXACT. In order to construct this environment, run the following commands:
@@ -53,3 +68,5 @@ Variance optimization is performed in the ```var_opt.ipynb``` file. This contain
 
 - ```clipped``` which controls whether or not variance optimization is performed in the clipped normal or just a regular normal distribution
 - ```use_d_key``` which controls whether or not to constrain the search space of scales to only the ones possible. Which are the scales occuring when d ∈ [4, 5,..., 2048] (saves time).
+
+
