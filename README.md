@@ -8,7 +8,7 @@ Efficient training of large-scale graph neural networks (GNNs) has been studied 
 ## Citation
 Kindly use the following BibTeX entry if you use the code in your work.
 ```
-@proceedings{bakhtiarifard2023ecnasbench,
+@inproceedings{eliassen2024activation,
     title={Activation Compression of Graph Neural Networks using Block-wise Quantization with Improved Variance Minimization},
     author={Sebastian Eliassen and Raghavendra Selvan},
     booktitle={International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
